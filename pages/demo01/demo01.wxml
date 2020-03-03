@@ -1,0 +1,76 @@
+<!--pages/demo01/demo01.wxml-->
+<!--
+  1.text 相当于以前web中的 span标签 行内元素 不会换行
+  2.view 相当于以前web中的 div标签  块级元素 会换行
+-->
+<text>pages/demo01/demo01.wxml</text>
+<view>傻子</view>
+<text>是你</text>
+<text>哦</text>
+
+<!--1 字符串-->
+<view>{{msg}}</view>
+
+<!--2 数字类型-->
+<view>{{num}}</view>
+
+<!--3 布尔类型-->
+<view>对还是错:{{torf}}</view>
+
+<view>--------------</view>
+
+<!--4 Object(对象)类型-->
+<view>{{person}}</view>
+<view>{{person.age}}</view>
+<view>{{person.name}}</view>
+<view>{{person.weigth}}</view>
+<view>{{person.height}}</view> 
+
+<!--5 标签的属性中使用-->
+<view data-num="{{num}}">自定义属性</view>
+
+<!--6 使用bool类型当属性 checked
+      字符串和花括号之间一定不要存在空格 否则会导致识别失败
+      eg:
+      <checkbox checked="   {{isChecked}}"> </checkbox>
+-->
+<view>
+  <checkbox checked="{{isChecked}}"></checkbox>
+</view>
+
+<view>------------------</view>
+<!--  -->
+
+<!--
+  7 列表循环 一些原则注意
+    1 wx:for="{{数组或者对象}}" wx:for-item="循环项的名称" wx:for-index="循环项的索引"
+    2 wx:key="唯一的值"用来提高列表渲染的性能
+      1 wx:key 绑定一个普通的字符串的时候 那么这个字符串名称 肯定是 循环数组中的 对象 的唯一属性 (如此demo中的id)
+      2 wx:key="*this"  表示 你的数组 是一个普通的数组 *this 表示是 循环项
+      [1,2,3,4,5]
+      ["1","222","adasf"]
+    3 当出现 数组的嵌套循环的时候 尤其注意 以下绑定的名称 不要重名
+       wx:for-item="item"  wx:for-index="index"
+    4 默认情况下 不写wx:for-item="item"  wx:for-index="index"
+      小程序也会把循环项的名称 和 索引的名称 item 和 index
+      只有一层循环的时候，（wx:for-item="item"  wx:for-index="index"）可以省略
+
+  9 对象同理
+
+  -->
+<view>
+  <view wx:for="{{list}}"  wx:for-item="item"  wx:for-index="index" wx:key="id" >
+  索引:{{index}}
+  ---
+  值:{{item.name}}
+  </view>
+</view>
+
+<view>
+  <view>对象循环</view>
+  <view wx:for="{{person}}" x:for-item="value"  wx:for-index="key" wx:key="name">
+    属性:{{index}}
+    -------
+    值:{{item}}
+  </view>
+</view>
