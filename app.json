@@ -1,0 +1,51 @@
+{ 
+  "pages": [ 
+    "pages/demo01/demo01",
+    "pages/index/index",
+    "pages/list02/list02",
+    "pages/list03/list03",
+    "pages/logs/logs"
+  ],
+
+
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#0094ff",
+    "navigationBarTitleText": "应用",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+
+  },
+
+
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "主页",
+      "iconPath": "images/list01.png",
+      "selectedIconPath": "images/list01_l.png"
+    },
+    {
+      "pagePath": "pages/list02/list02",
+      "text": "介绍",
+      "iconPath": "images/list02.png",
+      "selectedIconPath": "images/list02_l.png"
+    },
+    {
+      "pagePath": "pages/list03/list03",
+      "text": "我",
+      "iconPath": "images/list03.png",
+      "selectedIconPath": "images/list03_l.png"
+    }
+    ],
+
+      "color": "#0094ff",
+      "selectedColor": "#ff9400",
+      "backgroundColor": "#ff94ff"
+  },
+
+
+
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
